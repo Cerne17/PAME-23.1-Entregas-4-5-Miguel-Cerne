@@ -6,10 +6,12 @@ export class User {
   id: number;
   @Column()
   name: string;
-  @Column()
+  @Column({ nullable: true })
   password: string;
   @Column()
   createdAt: Date;
   @Column()
   changedAt: Date;
+  @Column({ nullable: true })
+  hashed_password: string;
 }
