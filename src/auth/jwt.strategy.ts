@@ -1,6 +1,7 @@
 import { ForbiddenException, Injectable } from '@nestjs/common';
 import { PassportStrategy } from '@nestjs/passport';
 import { Strategy } from 'passport-local';
+import { ExtractJwt } from 'passport-jwt';
 import { UserService } from 'src/user/user.service';
 import { jwtConstants } from './constants';
 
