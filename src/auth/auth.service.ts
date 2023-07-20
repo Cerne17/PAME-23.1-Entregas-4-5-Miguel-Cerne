@@ -20,7 +20,7 @@ export class AuthService {
 
   async validateUser(loginDto: LoginDto): Promise<any> {
     const { name, password } = loginDto;
-    const user = await this.userService.findOne(id); // Codar uma nova função para encontrar o user por nome
+    const user = await this.userService.findOneByName(name); // Codar uma nova função para encontrar o user por nome
     if (!user) {
       throw new NotFoundException('User with name ' + name + ' not found');
     }
