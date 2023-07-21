@@ -1,4 +1,11 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Ingredient } from 'src/ingredient/entities/ingredient.entity';
+import {
+  Column,
+  Entity,
+  JoinTable,
+  ManyToMany,
+  PrimaryGeneratedColumn,
+} from 'typeorm';
 
 @Entity({ name: 'product' })
 export class Product {
@@ -8,6 +15,10 @@ export class Product {
   name: string;
   @Column()
   quantity: number;
+  @Column()
+  @ManyToMany(() => Ingredient, (ingredient) => ingredient.products)
+  @JoinTable()
+  ingredients: Ingredient[];
   @Column()
   expireDate: Date;
   @Column()
