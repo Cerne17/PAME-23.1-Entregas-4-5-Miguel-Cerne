@@ -35,4 +35,29 @@ TECNOLOGIAS UTILIZADAS E SUAS INSTALAÇÕES:
   Como linter e formatter, utilizamos os padrões do nestjs:
   eslint e prettier
 
+  Para melhorar a segurança do sistema, utilizamos o protocolo 
+  JWT para não precisar salvar senhas no banco de dados em si.
+  Para criptografar a senha e gerar salts dinâmicamente,
+  utilizamos o bcrypt. Suas instalações básicas são feitas como
+  segue:
+
+    npm install bcrypt
+    npm install --save @nestjs/passport passport-local
+    npm install --save-dev @types/passport-local
+
+----------------------------------------------------------------
+
+MELHORIAS PARA O CÓDIGO:
+
+  Possíveis melhorias do código:
+
+    1. Fazer ingredientes iguais serem atualizados em uma mesma
+    linha da tabela. Atualmente, o fronter deve fazer muitas 
+    checagens manualmente e utilizar o método de findAll, o que
+    puxa muito processamento da API.
+
+    2. Checagens de pedidos. Manter o rastreio de pedidos a serem
+    feitos é uma ótima ideia para melhorar a produtividade e 
+    facilitar mais o uso dos funcionários. 
+
 ----------------------------------------------------------------
